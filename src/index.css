@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+/* =================================
+   Theatre Opening Animation
+================================= */
+
+@keyframes theatreHero {
+  from {
+    opacity: 0;
+    transform: translateY(100vh) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes theatreRow {
+  from {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Hero animation */
+
+.animate-theatre-hero {
+  animation: theatreHero 1.2s ease-out forwards;
+}
+
+
+/* Movie rows */
+
+.animate-theatre-row {
+  opacity: 0;
+  animation: theatreRow 0.9s ease-out forwards;
+}
+
+
+/* Animation delays */
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-900 {
+  animation-delay: 900ms;
+}
+
+
+/* Respect users who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-theatre-hero,
+  .animate-theatre-row {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================
+   THEATRE INTRO
+======================================== */
+
+@keyframes curtainLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes curtainRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes logoFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+.theatre-curtain-left {
+  animation: curtainLeft 1.4s cubic-bezier(0.77, 0, 0.18, 1)
+    forwards;
+  animation-delay: 0.3s;
+}
+
+.theatre-curtain-right {
+  animation: curtainRight 1.4s cubic-bezier(0.77, 0, 0.18, 1)
+    forwards;
+  animation-delay: 0.3s;
+}
+
+.theatre-logo {
+  animation: logoFade 1.3s ease-in-out forwards;
+}
+
+.curtain-folds {
+  background: repeating-linear-gradient(
+    90deg,
+    #050505 0px,
+    #111111 25px,
+    #020202 50px
+  );
+
+  box-shadow:
+    inset -20px 0 30px rgba(255, 255, 255, 0.03),
+    inset 20px 0 30px rgba(0, 0, 0, 0.8);
+}
+
+/* ========================================
+   STREAMBOX PARTICLES
+======================================== */
+
+.particle {
+  position: absolute;
+  display: block;
+  border-radius: 9999px;
+  background: white;
+  opacity: 0;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+
+  animation-name: floatingParticle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatingParticle {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0) scale(0.5);
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(20px, -40px, 0) scale(1);
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-20px, -100px, 0) scale(0.3);
+  }
+}
+
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blinkCursor 0.7s infinite;
+}
+
+@keyframes blinkCursor {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
