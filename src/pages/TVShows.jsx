@@ -1,5 +1,5 @@
 import MovieRow from "../components/MovieRow";
-import tvShows from "../data/TvShows";
+import tvShows from "../data/TVShows";
 
 function TVShows() {
   const trendingShows = tvShows.slice(0, 4);

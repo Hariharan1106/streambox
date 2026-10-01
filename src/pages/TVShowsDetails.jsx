@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import tvShows from "../data/TvShows";
+import tvShows from "../data/TVShows";
 import { useWatchlist } from "../context/WatchlistContext";
 
 function TVShowDetails() {
